@@ -1,4 +1,4 @@
-package com.example.charitydonation.Controller;
+package com.example.charityDonation.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

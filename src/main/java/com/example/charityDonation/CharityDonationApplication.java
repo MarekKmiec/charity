@@ -1,4 +1,4 @@
-package com.example.charitydonation;
+package com.example.charityDonation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
