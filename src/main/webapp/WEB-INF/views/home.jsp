@@ -5,19 +5,20 @@
 <jsp:include page="/fragments/header.jsp"/>
 
 
-
 <section id="stats" class="stats">
     <div class="container container--85">
         <div class="stats--item">
             <em>${quantity}</em>
             <h3>Oddanych worków</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum tempora!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum
+                tempora!</p>
         </div>
 
         <div class="stats--item">
             <em>${allDonations}</em>
             <h3>Przekazanych darów</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas quam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas
+                quam.</p>
         </div>
 
     </div>
@@ -55,44 +56,30 @@
 <section id="about-us" class="about-us">
     <div class="about-us--text">
         <h2>O nas</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero optio esse quisquam illo omnis.</p>
-        <img src="resources/images/signature.svg" class="about-us--text-signature" alt="Signature" />
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero
+            optio esse quisquam illo omnis.</p>
+        <img src="resources/images/signature.svg" class="about-us--text-signature" alt="Signature"/>
     </div>
-    <div class="about-us--image"><img src="resources/images/about-us.jpg" alt="People in circle" /></div>
+    <div class="about-us--image"><img src="resources/images/about-us.jpg" alt="People in circle"/></div>
 </section>
 
 <section id="help" class="help">
     <h2>Komu pomagamy?</h2>
 
-    <!-- SLIDE 1 -->
+
     <div class="help--slides active" data-id="1">
         <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
             Możesz sprawdzić czym się zajmują.</p>
-
         <ul class="help--slides-items">
-            <li>
+            <c:forEach items="${institutions}" var="i" varStatus="s">
+                <c:if test="${(s.count-1)%2==0}"><li></c:if>
                 <div class="col">
-                    <div class="title">Fundacja "Dbam o Zdrowie"</div>
-                    <div class="subtitle">Cel i misja: Pomoc dzieciom z ubogich rodzin.</div>
+                    <div class="title">${i.name}</div>
+                    <div class="subtitle">${i.description}</div>
                 </div>
+                <c:if test="${s.count%2==0}"></li></c:if>
+            </c:forEach>
 
-                <div class="col">
-                    <div class="title">Fundacja "A kogo"</div>
-                    <div class="subtitle">Cel i misja: Pomoc wybudzaniu dzieci ze śpiączki.</div>
-                </div>
-            </li>
-
-            <li>
-                <div class="col">
-                    <div class="title">Fundacja “Dla dzieci"</div>
-                    <div class="subtitle">Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</div>
-                </div>
-                <div class="col">
-                    <div class="title">Fundacja “Bez domu”</div>
-                    <div class="subtitle">Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania</div>
-                </div>
-
-            </li>
 
         </ul>
 
